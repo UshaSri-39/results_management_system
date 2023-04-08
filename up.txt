@@ -1,0 +1,38 @@
+
+               update SemResults join Externals on SemResults.roll_num=Externals.roll_num join Internals on SemResults.roll_num=Internals.roll_num set grade1= case when Internals.sub1+Externals.sub1 between 90 and 100 then 'O'
+                                                       when Internals.sub1+Externals.sub1 between 80 and 90 then 'A'
+                                                       when Internals.sub1+Externals.sub1 between 70 and 80 then 'B' 
+                                                       when Internals.sub1+Externals.sub1 between 60 and 70 then 'C' 
+                                                       when Internals.sub1+Externals.sub1 between 50 and 60 then 'D'
+                                                       when Internals.sub1+Externals.sub1 between 35 and 50 then 'P'
+                                                       else 'F' end,
+                                                       grade2= case when Internals.sub2+Externals.sub2 between 90 and 100 then 'O' 
+                                                       when Internals.sub2+Externals.sub2 between 80 and 90 then 'A'
+                                                       when Internals.sub2+Externals.sub2 between 70 and 80 then 'B'
+                                                       when Internals.sub2+Externals.sub2 between 60 and 70 then 'C'
+                                                       when Internals.sub2+Externals.sub2 between 50 and 60 then 'D' 
+                                                       when Internals.sub2+Externals.sub2 between 35 and 50 then 'P'
+                                                       else 'F' end,
+                                                       grade3= case when Internals.sub3+Externals.sub3 between 90 and 100 then 'O'
+                                                       when Internals.sub3+Externals.sub3 between 80 and 90 then 'A'
+                                                       when Internals.sub3+Externals.sub3 between 70 and 80 then 'B'
+                                                       when Internals.sub3+Externals.sub3 between 60 and 70 then 'C'
+                                                       when Internals.sub3+Externals.sub3 between 50 and 60 then 'D'
+                                                       when Internals.sub3+Externals.sub3 between 35 and 50 then 'P'
+                                                       else 'F' end,
+                                                       grade4= case when Internals.sub4+Externals.sub4 between 90 and 100 then 'O'
+                                                       when Internals.sub4+Externals.sub4 between 80 and 90 then 'A'
+                                                       when Internals.sub4+Externals.sub4 between 70 and 80 then 'B'
+                                                       when Internals.sub4+Externals.sub4 between 60 and 70 then 'C'
+                                                       when Internals.sub4+Externals.sub4 between 50 and 60 then 'D'
+                                                       when Internals.sub4+Externals.sub4 between 35 and 50 then 'P'
+                                                       else 'F'end,
+                                                       grade5= case when Internals.sub5+Externals.sub5 between 90 and 100 then 'O'
+                                                       when Internals.sub5+Externals.sub5 between 80 and 90 then 'A'
+                                                       when Internals.sub5+Externals.sub5 between 70 and 80 then 'B'
+                                                       when Internals.sub5+Externals.sub5 between 60 and 70 then 'C'
+                                                       when Internals.sub5+Externals.sub5 between 50 and 60 then 'D'
+                                                       when Internals.sub5+Externals.sub5 between 35 and 50 then 'P'
+                                                       else 'F' end
+                                                   where SemResults.roll_num=Externals.roll_num;
+                
